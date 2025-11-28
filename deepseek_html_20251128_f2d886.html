@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- SEO мета-теги -->
+<meta name="description" content="Apollon Client - премиум клиент для Minecraft PE/Bedrock Edition (Android) с уникальными текстурами, модами и оптимизацией для мобильных устройств.">
+<meta name="keywords" content="Minecraft PE, Minecraft Bedrock, Apollon Client, текстур пак, моды, клиент, скачать, Android, оптимизация">
+<meta name="author" content="Apollon Client Team">
+<title>Apollon Client — Премиум Клиент для Minecraft PE (Android)</title>
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 0. ПРИВЕТСТВЕННЫЙ ЭКРАН -->
+  <div id="intro-screen">
+      <div class="intro-content">
+          <div class="intro-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h1>Добро пожаловать в Apollon Client</h1>
+          <p>Загрузка лучшей оптимизации для MCPE...</p>
+      </div>
+  </div>
+
+  <!-- Хедер и Навигация -->
+  <!-- В хедере теперь ТОЛЬКО логотип и кнопка-гамбургер -->
+  <header>
+    <a href="#hero" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+      Apollon Client
+    </a>
+    
+    <!-- Кнопка Гамбургер (всегда видима) -->
+    <button class="menu-toggle" id="menuToggle">
+        <span class="hamburger"></span>
+    </button>
+  </header>
+  
+  <!-- Мобильное Меню - Теперь оно служит Главным Меню для всех разрешений -->
+  <div id="mobileMenu" class="mobile-menu">
+      <!-- Навигационные ссылки -->
+      <a href="#about" class="mobile-nav-link">О проекте</a>
+      <a href="#features" class="mobile-nav-link">Особенности</a>
+      <a href="#team" class="mobile-nav-link">Команда</a>
+      <a href="#support" class="mobile-nav-link">Поддержка</a>
+      
+      <!-- Кнопка CTA (Скачать) -->
+      <button class="cta-button" style="margin-top: 30px;" id="openDownloadBtnMobile">Скачать Клиент</button>
+  </div>
+
+
+  <main>
+    <!-- 1. Секция Hero (Главный экран) -->
+    <section id="hero" class="hero">
+      <h1>Apollon Client: <br> Идеальная <span>Оптимизация</span> <br> и Производительность</h1>
+      <p>Apollon — это премиум клиент, разработанный с нуля для максимальной скорости и стабильности на Android устройствах. Ощутите разницу в каждом кадре!</p>
+      <button class="cta-button" id="openDownloadBtnHero">Начать Скачивание (Android)</button>
+      <div class="hero-image-placeholder">
+        <span style="font-size: 1.5rem;">[Изображение Главного Экрана Apollon Client]</span>
+      </div>
+    </section>
+
+    <!-- 2. Секция О Проекте -->
+    <section id="about">
+        <h2 class="section-title">О Проекте <span>Apollon</span></h2>
+        <div class="content-block">
+            <p>
+                Apollon Client — это больше, чем просто текстур пак. Это тщательно проработанная модификация игрового движка **Minecraft Pocket Edition (Bedrock)**, направленная исключительно на платформу **Android**. 
+                Мы не просто меняем внешний вид, мы переписываем то, как игра взаимодействует с вашим оборудованием, чтобы обеспечить стабильные 60+ FPS даже в самых напряженных ситуациях. Это результат тысяч часов работы над микрооптимизацией и устранением стандартных "болячек" мобильного Bedrock Edition.
+            </p>
+            <h3>Модульная архитектура и кастомизация</h3>
+            <p>
+                Клиент построен на модульной системе, позволяя вам включать и отключать функции "на лету" прямо в игре. Хотите только повышенный FPS без нового HUD? Нет проблем. Нужен полный киберспортивный пакет? Активируйте все модули. Полный контроль всегда в ваших руках.
+            </p>
+            <h3>Строго для Android (MCPE/Bedrock)</h3>
+            <p>
+                Наша специализация позволяет нам достигать беспрецедентной оптимизации. Благодаря глубокому знанию архитектуры Android, мы смогли внедрить специфические для этой ОС улучшения, которые невозможны на других платформах. Мы обеспечиваем полную совместимость со всеми актуальными версиями Minecraft.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Секция Особенности -->
+    <section id="features">
+      <h2 class="section-title">Главные <span>Преимущества</span></h2>
+      <p style="text-align: center; color: var(--text-dark); max-width: 800px; margin: 0 auto 70px; font-size: 1.2rem;">Apollon Client дает вам все необходимые инструменты для доминирования в PvP и комфортной игры в любых режимах.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+          <h3>Производительность (FPS Boost)</h3>
+          <p>Увеличение частоты кадров на 30-50% по сравнению со стандартной игрой за счет оптимизации рендеринга частиц, листвы и дистанции прорисовки.</p>
+        </div>
+        <div class="feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v2.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3>Продвинутый HUD (Head-Up Display)</h3>
+          <p>Настраиваемый HUD с отображением FPS, Ping, CPS (кликов в секунду) и координат, что критически важно для соревновательной игры.</p>
+        </div>
+        <div class="feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.021 3.375 1.767 3.375h14.468c1.746 0 2.634-1.875 1.767-3.375l-7.234-12.895c-.834-1.496-2.902-1.496-3.736 0l-7.234 12.895z" />
+          </svg>
+          <h3>Улучшенный UI/UX</h3>
+          <p>Переработанное меню инвентаря, настроек и чата с более интуитивным и быстрым доступом к нужным функциям на сенсорных экранах.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Секция Команда -->
+    <section id="team">
+        <h2 class="section-title">Наша <span>Команда</span></h2>
+        <p style="color: var(--text-dark); max-width: 700px; margin: 0 auto 60px; font-size: 1.2rem;">Мы — команда профессионалов, чья миссия — сделать Minecraft PE лучшим мобильным киберспортивным опытом.</p>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">A</div>
+                <h4>Аполлон</h4>
+                <p>Главный Разработчик (Core Dev)</p>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">Z</div>
+                <h4>Зефир</h4>
+                <p>UX/UI Дизайнер, Моделлер</p>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">L</div>
+                <h4>Лайт</h4>
+                <p>Менеджер Сообщества, QA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Секция Технической Поддержки (FAQ) -->
+    <section id="support">
+        <h2 class="section-title">Техническая <span>Поддержка</span></h2>
+        <div class="support-container">
+            <div class="support-info">
+                <h3>Помощь всегда под рукой</h3>
+                <p style="color: var(--text-dark); margin-bottom: 0;">Наша обширная база знаний содержит ответы на самые частые вопросы. Если вы не нашли решения вашей проблемы, напишите нам в Telegram.</p>
+                
+                <a href="https://t.me/texpodercka" class="telegram-support" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.78 5.42-.9 6.8-.06.67-.36.9-.89.56-2.45-1.83-3.57-2.98-5.79-4.78-.53-.41-.91-.62-.88-1.02.03-.39.42-.56.96-.81 3.47-1.52 5.79-2.54 8.14-3.78.39-.2.75-.12.63.23z"/>
+                  </svg>
+                  Написать в поддержку
+                </a>
+            </div>
+            
+            <div class="content-block" style="background: var(--bg1); padding: 20px; border-color: var(--accent-secondary);">
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Как установить Apollon Client на Android? <span>&#x25BC;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>После нажатия на кнопку "Скачать", вы получите .mcpack файл. Откройте его через любой файловый менеджер на вашем Android устройстве. Minecraft автоматически запустится и импортирует клиент. Активируйте его в настройках мира.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Может ли использование Apollon привести к бану на серверах? <span>&#x25BC;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Apollon Client не содержит читов или хаков. Все его функции — это Quality of Life улучшения и оптимизация производительности. Он безопасен и разрешен на большинстве крупных Bedrock серверов. Мы следим за изменениями в античитах.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Как настроить HUD (индикаторы) в игре? <span>&#x25BC;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Откройте меню настроек Apollon Client (специальная кнопка в главном меню или чат-команда `/apollon`). Там вы найдете вкладку "HUD Settings", где можно включить/выключить и переместить все индикаторы (FPS, CPS и т.д.).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Я не вижу прироста FPS на старом устройстве, что делать? <span>&#x25BC;</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>1. Убедитесь, что клиент активирован. 2. Закройте все фоновые приложения. 3. В настройках графики MCPE снизьте дистанцию прорисовки до минимума (4-6 чанков) и отключите анимацию воды и красивое небо. Если проблема останется, ознакомьтесь с расширенным руководством по оптимизации.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- Футер -->
+  <footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#about">О проекте</a>
+            <a href="#features">Возможности</a>
+            <a href="#team">Команда</a>
+            <a href="#support">Поддержка</a>
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Условия использования</a>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+                    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 Apollon Client Team. Все права защищены.
+        </div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛЬНЫЕ ОКНА -->
+
+  <!-- Модальное окно "Скачать" -->
+  <div id="downloadModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" data-modal-target="downloadModal" style="color: var(--accent-secondary);">&times;</span>
+      <h2>Скачать Apollon Client</h2>
+      <p style="color: var(--text-dark); margin-bottom: 25px;">Вы скачиваете официальный Apollon Client, предназначенный **только для Android**.</p>
+      <div class="download-options">
+        <a href="#" class="download-option" onclick="showNotification('Началась загрузка файла Apollon_vX.mcpack. Проверьте папку Загрузки.', 'success'); closeModal(downloadModal); return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 25px; height: 25px; margin-bottom: 10px; color: var(--text-light);">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          Скачать .MCpack для Android
+          <span>Версия: 3.5.1 | Размер: 1.2 MB (Актуально)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Уведомление -->
+  <div id="notification"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

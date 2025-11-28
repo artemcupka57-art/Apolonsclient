@@ -1,149 +1,74 @@
 // -------------------------------------------------------------------------
-// 0. Инициализация и Приветственный Экран
-// -------------------------------------------------------------------------
-
-const introScreen = document.getElementById('intro-screen');
-
-window.onload = function () {
-    // Убеждаемся, что все загружено, затем запускаем анимацию
-    setTimeout(() => {
-        introScreen.classList.add('hidden');
-        document.body.classList.add('loaded');
-        
-        // Удаляем элемент через 1 секунду после начала fade out
-        setTimeout(() => {
-            introScreen.style.display = 'none';
-        }, 1000);
-        
-        // Инициализация логики FAQ и меню после загрузки
-        initFAQ();
-        initMenu();
-        initModals();
-    }, 1500); // Приветственный экран держится 1.5 секунды
-};
-
-// -------------------------------------------------------------------------
-// 1. Адаптивное Меню (Гамбургер)
-// -------------------------------------------------------------------------
-
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-function initMenu() {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('open');
-        // Блокируем скролл, когда меню открыто
-        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-
-    // Закрытие меню при клике на ссылку
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            closeMenu();
-        });
-    });
-    
-    // Открытие модального окна из мобильного меню
-    document.getElementById('openDownloadBtnMobile').addEventListener('click', () => {
-        closeMenu();
-        openModal(document.getElementById('downloadModal'));
-    });
-}
-
-function closeMenu() {
-    menuToggle.classList.remove('active');
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-}
-
-
-// -------------------------------------------------------------------------
-// 2. Модальные окна: Открытие/Закрытие
-// -------------------------------------------------------------------------
-
-const downloadModal = document.getElementById('downloadModal');
-const notification = document.getElementById('notification');
-
-function initModals() {
-    // Кнопка Скачать на Hero-секции
-    const openDownloadBtnHero = document.getElementById('openDownloadBtnHero');
-    const closeButtons = document.querySelectorAll('.modal-close');
-    
-    openDownloadBtnHero.addEventListener('click', () => openModal(downloadModal));
-
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const modalId = this.getAttribute('data-modal-target');
-            const modal = document.getElementById(modalId);
-            closeModal(modal);
-        });
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === downloadModal) {
-            closeModal(downloadModal);
-        }
-    });
-}
-
-
-/**
- * Открывает указанное модальное окно.
- * @param {HTMLElement} modal - Элемент модального окна.
- */
-function openModal(modal) {
-  if (modal) {
-    modal.style.display = 'flex';
-    // Даем браузеру время, чтобы применить display: flex, прежде чем добавить active
-    setTimeout(() => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Блокируем скролл фона
-    }, 10);
-  }
-}
-
-/**
- * Закрывает указанное модальное окно.
- * @param {HTMLElement} modal - Элемент модального окна.
- */
-function closeModal(modal) {
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = ''; // Разблокируем скролл фона
-    
-    setTimeout(() => {
-        modal.style.display = 'none';
-    }, 500); // 500ms соответствует длительности перехода
-  }
-}
-
-// -------------------------------------------------------------------------
-// 3. Уведомление
+// 1. Уведомления (Notifications)
 // -------------------------------------------------------------------------
 
 /**
- * Показывает всплывающее уведомление.
+ * Показывает плавающее уведомление в нижней части экрана.
  * @param {string} message - Текст сообщения.
- * @param {'success' | 'error'} type - Тип уведомления.
+ * @param {('success'|'error')} type - Тип уведомления (для стилизации).
  */
 function showNotification(message, type) {
-  notification.textContent = message;
-  notification.className = ''; 
-  notification.classList.add(type, 'show');
-  notification.style.display = 'block'; // Убеждаемся, что он виден
-  
-  setTimeout(() => {
-    notification.classList.remove('show');
+    const notification = document.getElementById('notification');
+    if (!notification) return;
+
+    // Сброс классов перед показом нового
+    notification.className = 'notification'; 
+    notification.textContent = message; 
+    
+    // Добавление классов для показа и стилизации
+    notification.classList.add(type, 'show');
+    notification.style.display = 'block'; 
+
+    // Автоматическое скрытие через 5 секунд
     setTimeout(() => {
-        notification.style.display = 'none';
-    }, 500);
-  }, 5000);
+        notification.classList.remove('show');
+        // Окончательное скрытие элемента после анимации (0.5s в CSS)
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 500);
+    }, 5000);
 }
 
 // -------------------------------------------------------------------------
-// 4. Логика FAQ (Техническая Поддержка)
+// 2. Логика Формы Контактов
+// -------------------------------------------------------------------------
+
+/**
+ * Обрабатывает отправку формы контактов.
+ * @param {Event} event - Событие отправки формы.
+ */
+function submitForm(event) {
+    event.preventDefault(); // Предотвращаем стандартную отправку формы
+    const form = event.target;
+    
+    // В реальном приложении здесь была бы отправка данных на сервер (fetch/AJAX).
+    // Для GitHub Pages мы просто имитируем успешную отправку.
+
+    try {
+        // Получаем данные формы (для примера)
+        const email = form.elements['email'].value;
+        const subject = form.elements['subject'].value;
+        const message = form.elements['message'].value;
+
+        // Имитация успешной отправки
+        console.log("Форма отправлена:");
+        console.log(`Email: ${email}, Тема: ${subject}, Сообщение: ${message.substring(0, 50)}...`);
+
+        // Показываем уведомление об успехе
+        showNotification('Ваше сообщение успешно отправлено! Мы свяжемся с вами.', 'success');
+        
+        // Очистка формы
+        form.reset();
+        
+    } catch (e) {
+        // Показываем уведомление об ошибке
+        console.error("Ошибка при обработке формы:", e);
+        showNotification('Произошла ошибка при отправке сообщения. Попробуйте еще раз.', 'error');
+    }
+}
+
+// -------------------------------------------------------------------------
+// 3. Логика FAQ (Техническая Поддержка)
 // -------------------------------------------------------------------------
 
 function initFAQ() {
@@ -170,3 +95,46 @@ function initFAQ() {
         });
     });
 }
+
+// -------------------------------------------------------------------------
+// 4. Логика Мобильного Меню (Mobile Navigation)
+// -------------------------------------------------------------------------
+
+function initMobileMenu() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = mobileMenu.querySelectorAll('a');
+
+    if (!menuButton || !mobileMenu) return;
+
+    // Переключение меню
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Закрытие меню при клике на ссылку (для навигации)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}
+
+
+// -------------------------------------------------------------------------
+// 5. Инициализация всех модулей после загрузки DOM
+// -------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Инициализация FAQ
+    initFAQ();
+    
+    // Инициализация Мобильного Меню
+    initMobileMenu();
+
+    // Привязка обработчика к форме контактов
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', submitForm);
+    }
+});
